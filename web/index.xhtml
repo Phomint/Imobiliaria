@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://xmlns.jcp.org/jsf/core">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Cadastro de Imóvel</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <!--CAMPO DE TEXTO -->
+            <h:outputLabel value="Endereço"/>
+            <h:inputText value="#{imovel.endereco}"/>
+            <br /><br />
+           <!--CAMPO DE TEXTO --> 
+            <h:outputLabel value="Bairro"/>
+            <h:inputText value="#{imovel.bairro}"/>
+            <br /><br />
+            <!--RADIO BUTTON -->
+            <h:selectOneRadio id="tipo" value="#{imovel.tipo}">
+                <f:selectItem itemValue="0" itemLabel="Venda"/>
+                <f:selectItem itemValue="1" itemLabel="Aluguel"/>
+            </h:selectOneRadio>
+           <br /><br />
+            <!--CAMPO DE TEXTO --> 
+            <h:outputLabel value="Valor"/>
+            <h:inputText value="#{imovel.valor}"/>
+            <br /><br />
+           <!--AREA DE TEXTO-->
+           <h:outputLabel value="Caracteristicas"/>
+            <h:inputTextarea value="#{imovel.caract}" cols="" rows=""/>
+           <br /><br />
+           <!--BUTTON-->
+           <h:commandButton value="Cadastrar" action="#{idao.salvarImovel(imovel.codigo,imovel.endereco,imovel.bairro,imovel.tipo,imovel.valor,imovel.caract)}"/> 
+        </h:form>
+    </h:body>
+</html>
+</f:view>
+
